@@ -1,16 +1,17 @@
-FROM node
+FROM node:16-alpine
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm i -y
+RUN yarn
 
 COPY . .
 
-RUN npm install && npm run build
+RUN yarn build
 
 EXPOSE 3000
 
-CMD npm run start
+CMD ["yarn", "start"]
+
 
