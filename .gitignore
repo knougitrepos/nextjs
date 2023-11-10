@@ -130,3 +130,4 @@ dist
 .pnp.*
 /.idea/git_toolbox_prj.xml
 !/pdc/package-lock.json
+!/package.json
