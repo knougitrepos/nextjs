@@ -103,6 +103,9 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: kafka1
       BOOTSTRAP_SERVERS: kafka1:9092, kafka2:9093, kafka3:9094
       KAFKA_CREATE_TOPICS: "test1:1:1"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_DELETE_TOPIC_ENABLE: 'true'
+
     ports:
       - "9092:9092"
     depends_on:
@@ -119,6 +122,8 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: kafka2
       BOOTSTRAP_SERVERS: kafka1:9092, kafka2:9093, kafka3:9094
       KAFKA_CREATE_TOPICS: "test2:1:1"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_DELETE_TOPIC_ENABLE: 'true'
     ports:
       - "9093:9092"
     depends_on:
@@ -135,6 +140,8 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: kafka3
       BOOTSTRAP_SERVERS: kafka1:9092, kafka2:9093, kafka3:9094
       KAFKA_CREATE_TOPICS: "test3:1:1"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_DELETE_TOPIC_ENABLE: 'true'
     ports:
       - "9094:9092"
     depends_on:
