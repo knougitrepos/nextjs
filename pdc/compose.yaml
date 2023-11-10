@@ -33,7 +33,7 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_DATABASE=pdc
-      - MYSQL_USER=pass_local_user
+      - MYSQL_USER=qkrehdcks
       - MYSQL_PASSWORD=qkrehdcks
       - MYSQL_ROOT_PASSWORD=qkrehdcks
       - TZ=Asia/Seoul
