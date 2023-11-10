@@ -23,14 +23,24 @@ services:
       - "9300"
 
   mysql:
-    image: "mysql:latest"
-    environment:
-      - "MYSQL_DATABASE=mydatabase"
-      - "MYSQL_PASSWORD=secret"
-      - "MYSQL_ROOT_PASSWORD=verysecret"
-      - "MYSQL_USER=myuser"
+    image: "mysql:8.0.30"
+    container_name: mysql
+    restart: always
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d
+      - ./db/data:/var/lib/mysql
     ports:
-      - "3306"
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=pdc
+      - MYSQL_USER=pass_local_user
+      - MYSQL_PASSWORD=qkrehdcks
+      - MYSQL_ROOT_PASSWORD=qkrehdcks
+      - TZ=Asia/Seoul
+
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
 
   redis:
     image: "redis:7.2"
